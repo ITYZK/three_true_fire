@@ -321,6 +321,13 @@ def order(req):
 
 
 def success(req):
+    try:
+        nickname = req.session["nickname"]
+    except:
+        nickname = None
+    if not nickname:
+        return redirect(reverse("login"))
+        
     if req.method == "GET":
         return render(req,"order.html")
     elif req.method == "POST":
@@ -422,6 +429,12 @@ def order_center(req):
 
 
 def get_history_order_info(req):
+    try:
+        nickname = req.session["nickname"]
+    except:
+        nickname = None
+    if not nickname:
+        return redirect(reverse("login"))
 
     if req.method == 'POST':
         order_id = req.POST.get('order_id')  #获取订单号
