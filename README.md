@@ -48,9 +48,9 @@
 
 #### 数据库设计
 
-用户表（user）：id（uid，主键）、用户名（uname）、密码（password）、性别（sex）、电话（phone）、
+用户表（user_info）：id（uid，主键），收件名（uname）、电话（phone）、收件地址（target_addr）,备注（remake），匿名（nickname）
 
-​                               邮箱（email）
+用户注册表（user）：注册（uname），密码（upass），匿名（nickname）
 
 食材表（foods）：id（fid，主键）、食材名称（fname）、食材单价（price）、食材规格（size）、库存数量  
 
